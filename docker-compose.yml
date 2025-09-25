@@ -13,7 +13,7 @@
       - springboot-mysql-net
 
   backend:
-    image: bhargavsai558/hoperaise-backend:latest
+    image: godavarthibhargava/hoperaise-backend:latest
     container_name: springboot
     ports:
       - "2025:1947"
@@ -24,7 +24,7 @@
       - springboot-mysql-net
 
   frontend:
-    image: bhargavsai558/hoperaise-frontend:latest
+    image: godavarthibhargava/hoperaise-frontend:latest
     container_name: react
     ports:
       - "3000:80"
