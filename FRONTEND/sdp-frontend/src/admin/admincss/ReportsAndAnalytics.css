@@ -1,0 +1,6 @@
+.reports-container { max-width: 1200px; margin: 24px auto; padding: 0 16px; }
+.reports-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.report-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.report-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.filters { display: flex; gap: 12px; flex-wrap: wrap; }
+

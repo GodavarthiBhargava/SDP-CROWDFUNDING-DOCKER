@@ -1,0 +1,261 @@
+
+
+
+/* ==============================
+   LOGIN PAGE (Crowdfunding Theme)
+============================== */
+.login-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f7fa 100%);
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  width: 80%;
+  max-width: 450px;
+}
+
+.login-form {
+  flex: 1;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 380px;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #00695c;
+}
+
+.signin-text {
+  font-weight: bold;
+  color: #004d40;
+}
+
+.signup-text {
+  font-weight: normal;
+  color: #004d40;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #37474f;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border: 1px solid #26a69a;
+  outline: none;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #26a69a;
+  text-decoration: none;
+}
+
+.signin-button {
+  background: #26a69a;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.signin-button:hover {
+  background: #00796b;
+}
+
+.signup-link {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #37474f;
+}
+
+.signup-link a {
+  color: #26a69a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ==============================
+   ADMIN PANEL LAYOUT
+============================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #26a69a 0%, #00695c 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo h1 {
+  color: white;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ==============================
+   SIDEBAR
+============================== */
+.main-content {
+  display: flex;
+  margin-top: 70px;
+}
+
+.sidebar {
+  width: 260px;
+  background: #f1f8f6;
+  padding: 1rem 0;
+  height: calc(100vh - 70px);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 70px;
+  left: 0;
+}
+
+.sidebar-heading {
+  color: #00695c;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  background: #e0f2f1;
+  color: #00796b;
+  transform: translateX(6px);
+}
+
+.sidebar a.active {
+  background: linear-gradient(135deg, #00796b, #26a69a);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(38, 166, 154, 0.2);
+}
+
+/* ==============================
+   LOGOUT BUTTON
+============================== */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #ffebee;
+  color: #b71c1c;
+  transform: translateX(6px);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+}

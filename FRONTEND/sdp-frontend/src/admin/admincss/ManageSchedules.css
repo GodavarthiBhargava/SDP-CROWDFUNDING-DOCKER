@@ -1,0 +1,6 @@
+.schedules-container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+.schedules-filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.schedules-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+.schedules-table th, .schedules-table td { border-bottom: 1px solid #e5e7eb; padding: 12px 14px; text-align: left; }
+.schedule-actions button { margin-right: 8px; }
+

@@ -1,0 +1,129 @@
+/* Container */
+.creator-profile-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.creator-profile-header {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 25px;
+  margin-bottom: 35px;
+}
+
+.creator-profile-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6a1b9a;
+}
+
+.creator-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #6a1b9a;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #6a1b9a;
+}
+
+.creator-header-info {
+  flex: 1;
+}
+
+.creator-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.creator-role {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6a1b9a;
+  margin-top: 4px;
+}
+
+.creator-bio {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Profile Details Grid */
+.creator-profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 50px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Loading */
+.loading-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6a1b9a;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #6a1b9a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .creator-profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .creator-profile-details {
+    grid-template-columns: 1fr;
+  }
+}

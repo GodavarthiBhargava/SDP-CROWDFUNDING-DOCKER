@@ -1,0 +1,319 @@
+/* Make whole app background white */
+html, body, #root, .app-container {
+  background: rgb(255, 254, 254) !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* NAVBAR HEIGHT: keep small and stable */
+:root {
+  --navbar-height: 72px;
+  --primary: #0F4C75;       /* Deep Blue */
+  --primary-dark: #3282B8;  /* Energetic Blue */
+  --bg: #F9FAFB;            /* Clean light background */
+  --text: #1F2937;          /* Dark gray for readability */
+  --accent: #F77F00;        /* Orange accent for buttons */
+  --accent-hover: #FF9F1C;  /* Hover state for accent */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: var(--navbar-height);
+  overflow-x: hidden;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+.navbar {
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* Logo image styling */
+.logo img.logo-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgb(18, 30, 165);
+}
+.logo span {
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 8px;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+.logo span:hover {
+  transform: scale(1.05);
+}
+
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+}
+.menu-toggle svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Links container */
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* link items */
+.nav-links li {
+  position: relative;
+}
+
+/* link & dropdown toggle */
+.nav-links a,
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* hover styling */
+.nav-links a:hover,
+.dropdown-toggle:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* Dropdown caret rotation */
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+.dropdown-icon.rotate { transform: rotate(180deg); }
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  color: var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1100;
+}
+
+/* Show dropdown on hover for desktop */
+@media (hover: hover) {
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu li { margin: 0; }
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  color: var(--primary);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.dropdown-menu a:hover {
+  background: #E8F1F2;
+  color: var(--primary-dark);
+  transform: translateX(5px);
+}
+
+/* Compact links on desktop */
+@media (min-width: 1024px) {
+  .nav-links a,
+  .dropdown-toggle {
+    font-size: 15px;
+    padding: 8px 14px;
+  }
+}
+
+/* =========================
+   Responsive nav (mobile)
+   ========================= */
+@media (max-width: 768px) {
+  .menu-toggle { display: inline-flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -110%;
+    height: 100vh;
+    width: 80%;
+    max-width: 340px;
+    background: var(--primary-dark);
+    flex-direction: column;
+    padding: calc(var(--navbar-height) + 20px) 18px 20px;
+    gap: 14px;
+    transition: right 0.3s ease;
+    z-index: 1200;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active { right: 0; }
+
+  /* Overlay */
+  .nav-links.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+  }
+
+  .nav-links a,
+  .dropdown-toggle {
+    color: white;
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    justify-content: flex-start;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: rgba(255,255,255,0.1);
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 10px;
+    padding: 0;
+    display: none;
+    width: 100%;
+  }
+  .dropdown.active .dropdown-menu { display: block; }
+  .dropdown-menu a {
+    color: white;
+    padding: 12px 20px;
+  }
+  .dropdown-menu a:hover {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    transform: none;
+  }
+}
+
+/* =========================
+   Utilities
+   ========================= */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+a { color: var(--primary); text-decoration: none; }
+button { font-family: inherit; }
+
+/* Accent buttons */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Ensure container always centers content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;         /* center horizontally */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Fix row alignment */
+.row {
+  display: flex;
+  justify-content: center;   /* center children inside */
+  align-items: center;       /* vertical alignment */
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+ 
+.col {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Make login card wider */
+.login-container .login-form {
+  max-width: 500px !important;   
+  width: 100% !important;      
+}

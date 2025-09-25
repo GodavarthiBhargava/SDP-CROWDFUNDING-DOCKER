@@ -1,0 +1,240 @@
+/* Container */
+.mycampaigns-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  border-radius: 12px;
+}
+
+/* Heading */
+.mycampaigns-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+/* Error or message */
+.message {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.message.success {
+  color: #27ae60;
+}
+
+.message.error {
+  color: #e74c3c;
+}
+
+/* Grid layout for campaigns */
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Table layout */
+.campaign-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.campaign-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.campaign-table thead th {
+  text-align: left;
+  padding: 14px 16px;
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.campaign-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.table-image {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.table-title { font-weight: 700; color: #111827; margin-bottom: 6px; }
+.table-desc { color: #6b7280; font-size: 0.95rem; margin-bottom: 8px; }
+.progress-row { display: flex; align-items: center; gap: 8px; }
+
+/* Individual campaign card */
+.campaign-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect */
+.campaign-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Campaign image */
+.campaign-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Card content */
+.campaign-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Enhanced title & description */
+.campaign-title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+.campaign-desc {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.4;
+  min-height: 40px;
+}
+
+.campaign-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.badge.status { background: #ecfeff; color: #0e7490; }
+.badge.status.active { background: #dcfce7; color: #166534; }
+.badge.status.completed { background: #dbeafe; color: #1e40af; }
+.badge.status.cancelled { background: #fee2e2; color: #991b1b; }
+
+.price-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.goal { color: #374151; }
+.collected { color: #065f46; }
+
+.progress-wrap { margin-bottom: 12px; }
+.progress-bar { width: 100%; height: 8px; background: #e5e7eb; border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #22c55e, #16a34a); border-radius: 999px; }
+.progress-text { margin-top: 6px; font-size: 0.85rem; color: #6b7280; }
+
+/* Campaign title */
+.campaign-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Campaign details */
+.campaign-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.status-active {
+  background-color: #27ae60;
+}
+
+.status-completed {
+  background-color: #3498db;
+}
+
+.status-cancelled {
+  background-color: #e74c3c;
+}
+
+/* Action buttons */
+.action-btn {
+  margin-top: auto;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mycampaigns-container {
+    padding: 15px;
+  }
+
+  .campaign-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .campaigns-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

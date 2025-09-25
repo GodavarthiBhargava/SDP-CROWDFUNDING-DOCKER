@@ -1,0 +1,164 @@
+/* ================================
+   Creator Login Page Styles
+   ================================ */
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3e5f5; /* light purple background */
+  padding: 20px;
+}
+
+.login-form {
+  background: #e1bee7; /* soft lavender */
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;  /* increased width */
+  width: 100%;       /* allow it to stretch */
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.signin-text {
+  font-weight: bold;
+  color: #db6060; /* deep purple for creator */
+}
+
+.signup-text {
+  font-weight: normal;
+  color: #6a1b9a;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.options label {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #6a1b9a;
+  text-decoration: none;
+}
+
+.signin-button {
+  background: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.signin-button:hover {
+  background: #4a148c;
+  transform: translateY(-2px);
+}
+
+.signup-section {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.signup-text {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #6a1b9a;
+}
+
+.signup-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #6a1b9a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+  background: #4a148c;
+  transform: translateY(-2px);
+}
+
+.signup-info {
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* ================================
+   Overrides for global .row/.col
+   ================================ */
+.login-container .row {
+  display: block !important;
+  justify-content: unset !important;
+  align-items: unset !important;
+  gap: 0 !important;
+  text-align: left !important;
+}
+
+.login-container .col {
+  flex: unset !important;
+  min-width: unset !important;
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-form {
+    padding: 30px;
+    max-width: 100%; /* take full width on small screens */
+  }
+}

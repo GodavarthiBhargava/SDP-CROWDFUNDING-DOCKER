@@ -1,0 +1,8 @@
+.billing-container { max-width: 1200px; margin: 20px auto; padding: 0 16px; }
+.billing-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.billing-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.billing-table { width: 100%; border-collapse: collapse; }
+.billing-table th, .billing-table td { border-bottom: 1px solid #e5e7eb; padding: 12px 14px; }
+.status-paid { color: #16a34a; font-weight: 600; }
+.status-pending { color: #f59e0b; font-weight: 600; }
+

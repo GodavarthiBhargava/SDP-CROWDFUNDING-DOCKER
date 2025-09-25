@@ -1,0 +1,111 @@
+/* FundConnect Donor Sidebar - Professional Design */
+.app-container .donor-sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 2rem 0;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+  border-right: 1px solid #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-container .donor-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6f00, #ffa000, #ff8f00, #ffb300);
+}
+
+.app-container .donor-sidebar-heading {
+  color: #ff6f00;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.app-container .donor-sidebar-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6f00, #ffa000);
+  border-radius: 2px;
+}
+
+.app-container .donor-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-container .donor-sidebar li {
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+}
+
+.app-container .donor-sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 1rem;
+  border-radius: 12px;
+  position: relative;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.app-container .donor-sidebar a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.app-container .donor-sidebar a:hover::before {
+  left: 100%;
+}
+
+.app-container .donor-sidebar a:hover {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  color: #ff6f00;
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(255, 111, 0, 0.2);
+  border-left: 4px solid #ff6f00;
+}
+
+.app-container .donor-sidebar a.active {
+  background: linear-gradient(135deg, #ff6f00 0%, #ffa000 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3);
+  transform: translateX(4px);
+}
+
+.app-container .donor-sidebar a.active::before {
+  display: none;
+}
+
+.app-container .donor-sidebar .nav-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.app-container .donor-sidebar a:hover .nav-icon {
+  transform: scale(1.1);
+}

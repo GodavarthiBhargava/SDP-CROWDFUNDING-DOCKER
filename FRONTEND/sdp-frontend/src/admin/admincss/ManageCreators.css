@@ -1,0 +1,169 @@
+.creator-container {
+  padding: 2rem;
+  background: linear-gradient(180deg, #fdfbff, #f4f8fc);
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.creator-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  position: relative;
+  color: #1e2a38;
+  letter-spacing: -0.5px;
+}
+
+.creator-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  margin: 0.7rem auto 0;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 4px;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.filters input,
+.filters select {
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid #dfe6ed;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  transition: all 0.25s ease;
+  flex: 1;
+  min-width: 240px;
+  color: #2c3e50;
+}
+
+.filters input::placeholder {
+  color: #a0a7ad;
+  font-style: italic;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 12px rgba(106, 17, 203, 0.25);
+}
+
+/* Table */
+.creator-table {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+  font-size: 0.92rem;
+}
+
+.creator-table th,
+.creator-table td {
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.creator-table th {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+}
+
+.creator-table tbody tr:nth-child(even) {
+  background: #f8faff;
+}
+
+.creator-table tbody tr:hover {
+  background: #eef3ff;
+  transition: background 0.3s ease;
+}
+
+/* Buttons */
+.delete-btn {
+  background: linear-gradient(135deg, #ff4d4d, #d63031);
+  color: #fff;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #d63031, #b02121);
+  transform: translateY(-2px);
+}
+
+/* Status Messages */
+.table-error,
+.table-loading,
+.table-empty {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.table-error {
+  color: #fff;
+  background: linear-gradient(135deg, #ff4d4d, #d63031);
+}
+
+.table-loading {
+  color: #fff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.table-empty {
+  color: #7f8c8d;
+  background: #ecf0f1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .creator-table th,
+  .creator-table td {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters input,
+  .filters select {
+    min-width: 100%;
+  }
+}
