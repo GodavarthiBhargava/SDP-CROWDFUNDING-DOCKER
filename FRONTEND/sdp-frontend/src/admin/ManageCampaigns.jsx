@@ -103,41 +103,43 @@ export default function ManageCampaigns() {
       ) : filteredCampaigns.length === 0 ? (
         <div className="table-empty">No Campaign Data Found</div>
       ) : (
-        <table className="campaign-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Goal</th>
-              <th>Collected</th>
-              <th>Status</th>
-              <th>Creator</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredCampaigns.map((campaign) => (
-              <tr key={campaign.id}>
-                <td>{campaign.id}</td>
-                <td>{campaign.title}</td>
-                <td>{campaign.category}</td>
-                <td>₹{campaign.goalAmount}</td>
-                <td>₹{campaign.collectedAmount}</td>
-                <td>{campaign.status}</td>
-                <td>{campaign.creator?.name || "—"}</td>
-                <td>
-                  <button
-                    className="delete-btn"
-                    onClick={() => deleteCampaign(campaign.id)}
-                  >
-                    <DeleteIcon /> Delete
-                  </button>
-                </td>
+        <div className="campaign-table-wrap">
+          <table className="campaign-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Goal</th>
+                <th>Collected</th>
+                <th>Status</th>
+                <th>Creator</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredCampaigns.map((campaign) => (
+                <tr key={campaign.id}>
+                  <td>{campaign.id}</td>
+                  <td>{campaign.title}</td>
+                  <td>{campaign.category}</td>
+                  <td>₹{campaign.goalAmount}</td>
+                  <td>₹{campaign.collectedAmount}</td>
+                  <td>{campaign.status}</td>
+                  <td>{campaign.creator?.name || "—"}</td>
+                  <td>
+                    <button
+                      className="delete-btn"
+                      onClick={() => deleteCampaign(campaign.id)}
+                    >
+                      <DeleteIcon /> Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

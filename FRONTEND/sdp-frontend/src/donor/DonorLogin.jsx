@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiUser, FiLock } from "react-icons/fi";
 import "./donorcss/DonorLogin.css";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
@@ -43,10 +44,16 @@ export default function DonorLogin() {
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
-          <input type="text" id="username" value={formData.username} onChange={handleChange} required />
+          <div className="input-group">
+            <FiUser className="input-icon" />
+            <input type="text" id="username" value={formData.username} onChange={handleChange} required />
+          </div>
 
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" value={formData.password} onChange={handleChange} required />
+          <div className="input-group">
+            <FiLock className="input-icon" />
+            <input type="password" id="password" value={formData.password} onChange={handleChange} required />
+          </div>
 
           <button type="submit" className="signin-button">Sign In</button>
         </form>

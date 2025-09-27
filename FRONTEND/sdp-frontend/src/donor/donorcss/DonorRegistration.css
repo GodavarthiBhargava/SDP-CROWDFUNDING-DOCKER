@@ -1,115 +1,234 @@
+/* ================================
+   Modern Donor Registration Styles
+   ================================ */
+
 .register-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-  min-height: 100vh;
-  background: #fff5f5; /* very light red */
+  min-height: calc(100vh - 140px);
+  background: #f8f9fa;
+  padding: 30px 20px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .register-form {
   background: #ffffff;
-  padding: 35px 30px;
-  border-radius: 12px;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.6s ease-in-out;
+  max-width: 600px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.register-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3282B8, #0F4C75);
+}
+
+.register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
 }
 
 .register-form h3 {
   text-align: center;
-  font-size: 24px;
+  margin-bottom: 35px;
+  color: #0F4C75;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #b71c1c; /* dark red for donor */
-  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
 }
 
-.form-group {
-  margin-bottom: 18px;
+.register-form h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3282B8, #0F4C75);
+  border-radius: 2px;
 }
 
-.form-group label {
+/* Form Labels */
+.register-form label {
   display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-  color: #333;
   font-weight: 600;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cfd8dc;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.3s ease;
-  background: white;
-  color: #333;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  border-color: #b71c1c;
-  box-shadow: 0 0 5px rgba(183, 28, 28, 0.3);
-}
-
-button[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  background: #b71c1c;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background: #7f0000;
-  transform: translateY(-1px);
-}
-
-.login-link {
-  text-align: center;
-  margin-top: 18px;
-  font-size: 14px;
-  color: #444;
-}
-
-.login-link a {
-  color: #b71c1c;
-  text-decoration: none;
-  font-weight: 600;
+  margin: 20px 0 8px;
+  color: #374151;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
 
-.login-link a:hover {
-  color: #7f0000;
+.register-form label:hover {
+  color: #0F4C75;
 }
 
-.success-message {
-  color: #2e7d32;
-  font-size: 14px;
-  margin-bottom: 10px;
+/* Form Inputs */
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #3282B8;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.1);
+  transform: translateY(-2px);
+  background: #f8f9ff;
+}
+
+.register-form input:hover,
+.register-form select:hover {
+  border-color: #3282B8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(50, 130, 184, 0.1);
+}
+
+.register-form select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* Submit Button */
+.register-form button[type="submit"] {
+  width: 100%;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #3282B8 0%, #0F4C75 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(50, 130, 184, 0.3);
+}
+
+.register-form button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.register-form button[type="submit"]:hover::before {
+  left: 100%;
+}
+
+.register-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #0F4C75 0%, #3282B8 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(50, 130, 184, 0.4);
+}
+
+.register-form button[type="submit"]:active {
+  transform: translateY(-1px);
+}
+
+/* Login Link */
+.login-link {
   text-align: center;
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.login-link a {
+  color: #3282B8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.login-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3282B8;
+  transition: width 0.3s ease;
+}
+
+.login-link a:hover::after {
+  width: 100%;
+}
+
+.login-link a:hover {
+  color: #0F4C75;
+  transform: translateY(-1px);
+}
+
+/* Messages */
+.success-message {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 4px 15px rgba(22, 101, 52, 0.1);
+  animation: slideInDown 0.5s ease-out;
 }
 
 .error-message {
-  color: #d32f2f;
-  font-size: 14px;
-  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #dc2626;
+  padding: 15px 20px;
+  border-radius: 12px;
   text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border: 1px solid #fecaca;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+  animation: slideInDown 0.5s ease-out;
 }
 
-@keyframes fadeIn {
+@keyframes slideInDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -117,11 +236,87 @@ button[type="submit"]:hover {
   }
 }
 
-@media screen and (max-width: 600px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 20px 15px;
+    min-height: calc(100vh - 120px);
+  }
+
+  .register-form {
+    padding: 30px 25px;
+    border-radius: 20px;
+  }
+
+  .register-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .register-form input,
+  .register-form select {
+    padding: 14px 18px;
+    margin-bottom: 18px;
+  }
+
+  .register-form button[type="submit"] {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 15px 10px;
+  }
+
   .register-form {
     padding: 25px 20px;
+    border-radius: 16px;
   }
+
   .register-form h3 {
-    font-size: 20px;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
   }
+
+  .register-form input,
+  .register-form select {
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+
+  .register-form button[type="submit"] {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Animation for page load */
+.register-form {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading state for button */
+.register-form button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.register-form button[type="submit"]:disabled:hover {
+  transform: none;
+  box-shadow: 0 8px 25px rgba(50, 130, 184, 0.3);
 }

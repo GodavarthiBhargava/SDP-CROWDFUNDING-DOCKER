@@ -62,7 +62,7 @@ export default function CreatorDashboard() {
       </div>
 
       <div className="quick-links">
-        <a href="/creator/createcampaigns" className="ql">Create Campaign</a>
+        <a href="/creator/create" className="ql">Create Campaign</a>
         <a href="/creator/mycampaigns" className="ql">My Campaigns</a>
         <a href="/creator/donors" className="ql">Donor List</a>
       </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiUser, FiLock } from "react-icons/fi";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contextapi/AuthContext";
@@ -58,22 +59,28 @@ export default function CreatorLogin() {
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Email / Username</label>
-          <input
-            type="text"
-            id="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-group">
+            <FiUser className="input-icon" />
+            <input
+              type="text"
+              id="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-group">
+            <FiLock className="input-icon" />
+            <input
+              type="password"
+              id="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <button type="submit" className="signin-button">
             Sign In
@@ -82,7 +89,7 @@ export default function CreatorLogin() {
 
         <div className="signup-section">
           <p>New to FundConnect?</p>
-          <Link to="/contact" className="signup-button">
+          <Link to="/creator/register" className="signup-button">
             Register as Creator
           </Link>
           <p>Contact admin team for platform access</p>

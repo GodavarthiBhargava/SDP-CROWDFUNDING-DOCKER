@@ -6,6 +6,8 @@ import placeholderImg from "../assets/main.png";
 export default function BrowseCampaigns() {
   const [campaigns, setCampaigns] = useState([]);
   const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("All");
 
   const API_URL = `${import.meta.env.VITE_API_URL}/campaign`;
 
@@ -99,67 +101,119 @@ export default function BrowseCampaigns() {
     alert("Thank you for your donation!");
   };
 
+  // Filter campaigns based on search and category
+  const filteredCampaigns = campaigns.filter((c) => {
+    const query = search.toLowerCase();
+    const matchesSearch =
+      c.title?.toLowerCase().includes(query) ||
+      c.description?.toLowerCase().includes(query) ||
+      c.category?.toLowerCase().includes(query);
+    
+    const matchesCategory =
+      categoryFilter === "All" ||
+      c.category?.toLowerCase() === categoryFilter.toLowerCase();
+    
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <div className="browsecampaigns-container">
       <h2>Browse Campaigns</h2>
       {error && <p className="error-message">{error}</p>}
 
-      {campaigns.length === 0 ? (
+      {/* Search and Filter Options */}
+      <div className="filters">
+        <input
+          placeholder="🔍 Search by title, description, category"
+          value={search}
+          onChange={(e) => setSearch(e.target.value.trimStart())}
+        />
+        <select
+          value={categoryFilter}
+          onChange={(e) => setCategoryFilter(e.target.value)}
+        >
+          <option>All</option>
+          <option>Startup</option>
+          <option>Charity</option>
+          <option>Sponsorship</option>
+          <option>Healthcare</option>
+        </select>
+      </div>
+
+      {filteredCampaigns.length === 0 ? (
         <p>No active campaigns available.</p>
       ) : (
-        <div className="cards-grid">
-          {campaigns.map((c) => {
-            const pct = Math.min(
-              100,
-              Math.floor(((c.collectedAmount || 0) / (c.goalAmount || 1)) * 100)
-            );
-            return (
-              <div className="card" key={c.id}>
-                <div className="card-image-wrap">
-                  <img
-                    className="card-image"
-                    src={`${API_URL}/image/${c.id}`}
-                    alt={c.title}
-                    onError={(e) => {
-                      e.currentTarget.src = placeholderImg;
-                    }}
-                  />
-                  <div className="card-badges">
-                    <span className="badge">{c.category}</span>
-                    <span className="badge status">{c.status}</span>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <h3 className="card-title">{c.title}</h3>
-                  <p className="card-desc">
-                    {(c.description || "").slice(0, 140)}
-                    {(c.description || "").length > 140 ? "…" : ""}
-                  </p>
-                  <div className="price-row">
-                    <div className="goal">Goal: ₹{c.goalAmount}</div>
-                    <div className="raised">Raised: ₹{c.collectedAmount}</div>
-                  </div>
-                  <div className="progress-row">
-                    <div className="progress-bar">
-                      <div
-                        className="progress-fill"
-                        style={{ width: `${pct}%` }}
+        <div className="campaign-table-wrap">
+          <table className="campaign-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title & Description</th>
+                <th>Category</th>
+                <th>Goal</th>
+                <th>Raised</th>
+                <th>Progress</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredCampaigns.map((c) => {
+                const pct = Math.min(
+                  100,
+                  Math.floor(((c.collectedAmount || 0) / (c.goalAmount || 1)) * 100)
+                );
+                return (
+                  <tr key={c.id}>
+                    <td>
+                      <img
+                        className="table-image"
+                        src={`${API_URL}/image/${c.id}`}
+                        alt={c.title}
+                        onError={(e) => {
+                          e.currentTarget.src = placeholderImg;
+                        }}
                       />
-                    </div>
-                    <span className="progress-text">{pct}%</span>
-                  </div>
-                </div>
-                <div className="card-actions">
-                  <button
-                    className="donate-btn"
-                    onClick={() => handleDonate(c)}
-                  >
-                    Donate
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+                    </td>
+                    <td>
+                      <div className="table-title">{c.title}</div>
+                      <div className="table-desc">
+                        {(c.description || "").slice(0, 100)}
+                        {(c.description || "").length > 100 ? "…" : ""}
+                      </div>
+                    </td>
+                    <td>
+                      <span className="badge">{c.category}</span>
+                    </td>
+                    <td>₹{c.goalAmount}</td>
+                    <td className="collected">₹{c.collectedAmount}</td>
+                    <td>
+                      <div className="progress-row">
+                        <div className="progress-bar">
+                          <div
+                            className="progress-fill"
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                        <span className="progress-text">{pct}%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span className="badge status active">{c.status}</span>
+                    </td>
+                    <td>
+                      <button
+                        className="donate-btn"
+                        onClick={() => handleDonate(c)}
+                      >
+                        Donate
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       )}
     </div>

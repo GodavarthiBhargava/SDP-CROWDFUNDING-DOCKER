@@ -1,5 +1,5 @@
 .admin-dashboard {
-  padding: 2rem;
+  padding: 0;
   max-width: 1400px;
   margin: 0 auto;
   font-family: "Inter", sans-serif;
@@ -37,9 +37,10 @@
   align-items: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #3c3838, #0f1196);
+  background: linear-gradient(135deg, #0F4C75, #3282B8);
   border-radius: 16px;
   color: white;
+  box-shadow: 0 8px 25px rgba(15, 76, 117, 0.2);
 }
 
 .welcome-section h1 {
@@ -105,7 +106,7 @@
   margin: 0;
   font-size: 2rem;
   font-weight: 700;
-  color: #d32f2f;
+  color: #0F4C75;
 }
 
 .stat-content p {
@@ -151,7 +152,7 @@
 }
 
 .card-count {
-  background: #d32f2f;
+  background: #0F4C75;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -199,7 +200,7 @@
   padding: 1rem;
   background: #f8f9fa;
   border-radius: 8px;
-  border-left: 4px solid #d32f2f;
+  border-left: 4px solid #0F4C75;
 }
 
 .appointment-info h4 {
@@ -216,7 +217,7 @@
 
 .appointment-date {
   margin: 0;
-  color: #d32f2f;
+  color: #0F4C75;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -242,12 +243,12 @@
 }
 
 .action-btn.primary {
-  background: linear-gradient(135deg, #d32f2f, #f44336);
+  background: linear-gradient(135deg, #0F4C75, #3282B8);
   color: white;
 }
 
 .action-btn.primary:hover {
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  background: linear-gradient(135deg, #0a3a5a, #0F4C75);
   transform: translateY(-2px);
 }
 
@@ -258,9 +259,9 @@
 }
 
 .action-btn.secondary:hover {
-  background: #ffebee;
-  border-color: #d32f2f;
-  color: #d32f2f;
+  background: #e8f1f2;
+  border-color: #0F4C75;
+  color: #0F4C75;
   transform: translateY(-2px);
 }
 
@@ -337,7 +338,7 @@
 .summary-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #d32f2f;
+  color: #0F4C75;
 }
 
 /* Status Badges */

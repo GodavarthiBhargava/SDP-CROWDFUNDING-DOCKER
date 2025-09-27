@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiUser, FiLock } from "react-icons/fi";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contextapi/AuthContext";
@@ -52,22 +53,28 @@ export default function AdminLogin() {
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-group">
+            <FiUser className="input-icon" />
+            <input
+              type="text"
+              id="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-group">
+            <FiLock className="input-icon" />
+            <input
+              type="password"
+              id="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
           <div className="options">
             <div style={{ display: "flex", alignItems: "center" }}>
